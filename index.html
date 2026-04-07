@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ingenium Timing Chain Replacement | Jaguar & Land Rover 2.0 Diesel | Halesowen</title>
-  <meta name="description" content="Fixed-price 2.0 Ingenium timing chain replacement in Halesowen for Jaguar and Land Rover diesel vehicles. Jaguar £1,599. Range Rover from £1,899." />
+  <meta name="description" content="Fixed-price 2.0 Ingenium timing chain replacement in Halesowen for Jaguar and Land Rover diesel vehicles. Jaguar £1,599. Land Rover / Range Rover models £1,899." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#f8f5ef" />
   <meta name="format-detection" content="telephone=yes" />
@@ -14,7 +14,7 @@
   <meta property="og:title" content="Ingenium Timing Chain Replacement | Jaguar & Land Rover 2.0 Diesel | Halesowen" />
   <meta property="og:description" content="Fixed-price 2.0 Ingenium diesel timing chain replacement in Halesowen for Jaguar and Land Rover vehicles." />
   <meta property="og:url" content="https://YOURDOMAIN.co.uk/" />
-  <meta property="og:image" content="https://YOURDOMAIN.co.uk/og-image.jpg" />
+  <meta property="og:image" content="https://YOURDOMAIN.co.uk/images/hero-engine-rebuild.jpg" />
 
   <link rel="canonical" href="https://YOURDOMAIN.co.uk/" />
 
@@ -42,12 +42,10 @@
       --gold-3:#e0bb73;
       --gold-soft:rgba(168,116,25,.10);
       --gold-soft-2:rgba(203,154,63,.08);
-      --danger-bg:#fff4ef;
       --danger-text:#7d2f1f;
       --shadow:0 14px 34px rgba(54,40,16,.07);
       --shadow-soft:0 8px 20px rgba(54,40,16,.05);
       --radius:20px;
-      --radius-sm:14px;
       --max:1180px;
       --nav-h:78px;
     }
@@ -285,7 +283,7 @@
       gap:10px;
     }
     .hero-points{margin:20px 0 22px}
-    .hero-points li,.card,.gallery-tile,.faq-item,.map-card,.form-card,.info-card{
+    .hero-points li,.card,.gallery-figure,.faq-item,.map-card,.form-card,.info-card{
       border-radius:var(--radius);
     }
     .hero-points li{
@@ -424,24 +422,30 @@
     }
     .gallery-grid{
       grid-template-columns:repeat(2,minmax(0,1fr));
+      margin-top:14px;
     }
-    .gallery-tile{
-      min-height:170px;
-      padding:18px;
-      border:1px dashed rgba(168,116,25,.22);
+    .gallery-figure{
+      margin:0;
+      overflow:hidden;
+      border:1px solid var(--line);
       background:linear-gradient(180deg,#fffdfa 0%,#faf5ec 100%);
-      display:flex;
-      align-items:flex-end;
       box-shadow:var(--shadow-soft);
     }
-    .gallery-tile span{
-      display:inline-block;
-      padding:8px 10px;
-      border-radius:999px;
-      background:rgba(255,253,250,.92);
-      font-weight:700;
-      font-size:.9rem;
-      border:1px solid #e5dbc9;
+    .gallery-figure img{
+      width:100%;
+      aspect-ratio:4 / 5;
+      object-fit:cover;
+      display:block;
+      transition:transform .25s ease;
+    }
+    .gallery-figure:hover img{
+      transform:scale(1.02);
+    }
+    .gallery-figure figcaption{
+      padding:12px 14px;
+      color:#4d5661;
+      font-size:.95rem;
+      border-top:1px solid rgba(0,0,0,.05);
     }
 
     .faq-list{
@@ -481,23 +485,12 @@
       font-size:1rem;
       font-weight:900;
     }
-    .faq-item[open] summary::after{
-      content:"−";
-    }
-    .faq-answer{
-      padding:0 18px 18px;
-      color:var(--muted);
-    }
+    .faq-item[open] summary::after{content:"−"}
+    .faq-answer{padding:0 18px 18px;color:var(--muted)}
     .faq-answer p:last-child{margin-bottom:0}
 
-    .contact-grid{
-      gap:16px;
-    }
-
-    .form-card{
-      padding:20px;
-    }
-
+    .contact-grid{gap:16px}
+    .form-card{padding:20px}
     .form-top-note{
       background:linear-gradient(180deg,#fdf7f0 0%,#fbf2e8 100%);
       border:1px solid #ead9c3;
@@ -507,14 +500,8 @@
       margin-bottom:16px;
     }
 
-    .info-card{
-      padding:18px;
-    }
-
-    .info-title{
-      margin-bottom:10px;
-    }
-
+    .info-card{padding:18px}
+    .info-title{margin-bottom:10px}
     .info-address{
       font-weight:700;
       color:#3b4048;
@@ -578,10 +565,7 @@
     .info-highlights{
       margin:10px 0 14px;
     }
-    .info-highlights li{
-      color:#5e6671;
-    }
-
+    .info-highlights li{color:#5e6671}
     .info-highlights li::before{
       content:"✓";
       color:#6aa06e;
@@ -691,8 +675,8 @@
       .grid-2,.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
       .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .contact-pills .contact-pill-wide{width:auto;flex:1 1 100%;}
-      .map-card iframe{height:250px;}
+      .contact-pills .contact-pill-wide{width:auto;flex:1 1 100%}
+      .map-card iframe{height:250px}
     }
 
     @media (min-width:980px){
@@ -706,9 +690,7 @@
         grid-template-columns:1.2fr .9fr .9fr;
         max-width:760px;
       }
-      .hero-actions .btn-primary{
-        grid-column:auto;
-      }
+      .hero-actions .btn-primary{grid-column:auto}
       .contact-grid{
         grid-template-columns:1.1fr .9fr;
         align-items:start;
@@ -720,12 +702,8 @@
         min-width:122px;
         padding:0 18px;
       }
-      .contact-pill{
-        width:100%;
-      }
-      .hours-row{
-        font-size:.95rem;
-      }
+      .contact-pill{width:100%}
+      .hours-row{font-size:.95rem}
     }
   </style>
 
@@ -753,6 +731,7 @@
           "latitude":"52.47248666914069",
           "longitude":"-2.032234939379029"
         },
+        "sameAs":["https://www.facebook.com/KovacServices/"],
         "areaServed":[
           {"@type":"AdministrativeArea","name":"West Midlands"},
           {"@type":"Country","name":"United Kingdom"}
@@ -781,8 +760,8 @@
           },
           {
             "@type":"Offer",
-            "@id":"https://YOURDOMAIN.co.uk/#offer-lr",
-            "name":"Range Rover 2.0 Ingenium Diesel Timing Chain Replacement",
+            "@id":"https://YOURDOMAIN.co.uk/#offer-landrover",
+            "name":"Land Rover / Range Rover 2.0 Ingenium Diesel Timing Chain Replacement",
             "price":"1899",
             "priceCurrency":"GBP",
             "availability":"https://schema.org/InStock",
@@ -849,7 +828,7 @@
 
             <div class="hero-side">
               <div class="hero-side-visual">
-                <img src="images/timing-chain-fitment.jpg" alt="2.0 Ingenium timing chain being fitted during repair" />
+                <img src="images/hero-engine-rebuild.jpg" alt="Land Rover Ingenium engine removed and prepared for timing chain replacement" />
               </div>
 
               <aside class="card highlight" aria-label="Quick pricing panel">
@@ -872,7 +851,7 @@
                 <div class="divider"></div>
 
                 <ul class="list-clean">
-                  <li>For 2.0 Ingenium diesel vehicles from 2015 to 2019</li>
+                  <li>For 2.0 Ingenium diesel vehicles from 2015 to 2019 on the models listed above</li>
                   <li>Typical repair time is 3 to 5 working days</li>
                   <li>Designed for people who value quality and care over a rushed cheap job</li>
                 </ul>
@@ -932,7 +911,7 @@
           </article>
 
           <article class="card highlight">
-            <span class="muted-label">Range Rover</span>
+            <span class="muted-label">Land Rover / Range Rover</span>
             <h3>Evoque, Discovery, Discovery Sport, Velar</h3>
             <div class="price-tag">£1,899</div>
             <p>Full timing chain kit replacement for applicable 2.0 Ingenium diesel models.</p>
@@ -1057,28 +1036,51 @@
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-header">
-          <h2>Gallery and proof of work</h2>
+          <h2>Actual workshop photos</h2>
           <p>
-            A few strong images on the homepage build trust quickly. The full stack of repair photos and review screenshots belongs on a separate gallery page.
+            These are real photos from our own timing chain jobs, lightly polished for the website and watermarked with Kovac branding.
           </p>
         </div>
 
         <div class="gallery-intro">
-          Best setup: keep 6 to 9 of your strongest images here, then create a separate <strong>gallery.html</strong> for complete job walkthroughs, customer review screenshots and before-and-after photos.
+          We do not use generic stock photos here. The images below show diagnosis, cleaning, reassembly, quality checks and finished handover condition.
         </div>
 
-        <div class="gallery-grid" style="margin-top:14px;">
-          <div class="gallery-tile"><span>Engine stripped and timed correctly</span></div>
-          <div class="gallery-tile"><span>Yellow witness marks on torqued fasteners</span></div>
-          <div class="gallery-tile"><span>Chain kit replacement close-up</span></div>
-          <div class="gallery-tile"><span>Sump protection during cleaning</span></div>
-          <div class="gallery-tile"><span>Official JLR diagnostics phase check</span></div>
-          <div class="gallery-tile"><span>Finished build and final check</span></div>
-        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-figure">
+            <img src="images/gallery-diagnostic-stretch-test.jpg" alt="Official JLR timing chain stretch test showing chain fault detected" loading="lazy" />
+            <figcaption>Official JLR timing chain stretch test confirming the fault before replacement.</figcaption>
+          </figure>
 
-        <div class="hero-actions" style="margin-top:16px;max-width:560px;">
-          <a class="btn btn-secondary" href="gallery.html">Future Gallery Page</a>
-          <a class="btn btn-soft" href="#contact">Ask About Booking</a>
+          <figure class="gallery-figure">
+            <img src="images/gallery-before-cleaning.jpg" alt="State of engine after timing cover removal before deep cleaning" loading="lazy" />
+            <figcaption>Before cleaning. A clear example of why engine hygiene matters during this job.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <img src="images/gallery-clean-and-marked.jpg" alt="Spotless clean engine with new timing components fitted and yellow witness marks" loading="lazy" />
+            <figcaption>Spotless clean reassembly with new timing components fitted and visible quality-control marking.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <img src="images/gallery-chain-installed.jpg" alt="Jaguar Ingenium timing chain fitted with guides and witness marks visible" loading="lazy" />
+            <figcaption>New timing components installed correctly, with critical fasteners witness-marked in yellow.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <img src="images/gallery-yellow-mark-cover.jpg" alt="Timing chain cover refitted with all bolts yellow witness marked after torque" loading="lazy" />
+            <figcaption>The Yellow Mark Standard. Covers back on, every bolt torqued to spec and checked.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <img src="images/gallery-crankshaft-seal.jpg" alt="New crankshaft seal being fitted during Jaguar Land Rover Ingenium repair" loading="lazy" />
+            <figcaption>New crankshaft seal being fitted as part of a careful, detail-focused rebuild.</figcaption>
+          </figure>
+
+          <figure class="gallery-figure">
+            <img src="images/gallery-finished-engine-bay.jpg" alt="Completed Jaguar Ingenium timing chain job with clean engine bay" loading="lazy" />
+            <figcaption>Finished job. Engine bay cleaned, tested and ready to go back to the customer.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -1096,7 +1098,7 @@
           <details class="faq-item">
             <summary>What does the repair cost?</summary>
             <div class="faq-answer">
-              <p>Jaguar models listed on this page are £1,599. Range Rover models listed on this page are £1,899.</p>
+              <p>Jaguar models listed on this page are £1,599. Land Rover / Range Rover models listed on this page are £1,899.</p>
             </div>
           </details>
 
@@ -1268,6 +1270,10 @@
               <li>Workmanship-first approach with no rushed shortcuts</li>
               <li>Please send registration, mileage and any fault codes with your enquiry</li>
             </ul>
+
+            <div class="contact-pills" style="margin-top:8px;">
+              <a class="contact-pill contact-pill-wide" href="https://www.facebook.com/KovacServices/" target="_blank" rel="noopener">Read reviews and see our other services on Facebook</a>
+            </div>
 
             <a class="btn btn-secondary" href="https://www.google.com/maps?q=52.47248666914069,-2.032234939379029" target="_blank" rel="noopener">Open in Maps</a>
 
