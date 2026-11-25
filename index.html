@@ -498,6 +498,11 @@
     }
     .check input{width:18px;height:18px;margin-top:2px;padding:0;accent-color:var(--gold);box-shadow:none}
     .form-note{font-size:.88rem;color:var(--dim)}
+    .form-status{margin:0}
+    .form-status:not(:empty){padding:12px;border:1px solid currentColor;border-radius:12px;color:#182130}
+    .form-status[data-state="success"]{background:#edf8ef}
+    .form-status[data-state="error"]{background:#fff3ef}
+    #booking-form{scroll-margin-top:calc(var(--nav-h) + 14px)}
     .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
 
     .info-address{font-weight:700;color:var(--heading);margin-bottom:14px}
@@ -935,7 +940,7 @@
               <a class="btn btn-wa" href="https://wa.me/447833823384?text=Hi%20Kovac%2C%20I%20think%20my%20Ingenium%20needs%20a%20timing%20chain%20-%20" target="_blank" rel="noopener">WhatsApp us</a>
             </div>
 
-            <form action="https://formspree.io/f/xwvwylkn" method="POST">
+            <form id="booking-form" action="https://formspree.io/f/xwvwylkn" method="POST">
               <input type="hidden" name="service" value="Ingenium Timing Chain Enquiry" />
               <input type="hidden" name="_subject" value="New Ingenium timing chain enquiry" />
               <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -978,6 +983,7 @@
               <p class="form-note">Typical turnaround 3–5 working days · 1 year / 10,000 mile workmanship warranty · Evidence Pack on every job.</p>
 
               <button class="btn btn-mark" type="submit">Send enquiry</button>
+              <p class="form-status" id="enquiry-status" role="status" aria-live="polite" aria-atomic="true"></p>
             </form>
           </div>
 
@@ -1079,7 +1085,7 @@
   <div class="mobile-bar">
     <a class="btn btn-line" href="tel:+447833823384">Call</a>
     <a class="btn btn-wa" href="https://wa.me/447833823384?text=Hi%20Kovac%2C%20I%20think%20my%20Ingenium%20needs%20a%20timing%20chain%20-%20" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn btn-mark" href="#contact">Book</a>
+    <a class="btn btn-mark" href="#booking-form">Book</a>
   </div>
 
   <script>
@@ -1089,6 +1095,48 @@
     document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
       a.addEventListener("click",function(){gtag("event","click_to_whatsapp");});
     });
+  </script>
+  <script>
+    (function () {
+      const form = document.getElementById('booking-form');
+      const status = document.getElementById('enquiry-status');
+      if (!form || !status || !window.fetch || !window.FormData) return;
+      const button = form.querySelector('button[type="submit"]');
+      let busy = false;
+      function show(state, message) {
+        status.dataset.state = state;
+        status.textContent = message;
+      }
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        if (busy) return;
+        busy = true;
+        button.disabled = true;
+        show('pending', 'Sending your enquiry…');
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form)
+          });
+          if (!response.ok) {
+            show('error', 'We couldn’t confirm your enquiry. Your details are still here. You can try again or call or WhatsApp us on 07833 823384.');
+            return;
+          }
+          form.reset();
+          show('success', 'Your enquiry was submitted. This is not a confirmed booking.');
+          if (typeof window.gtag === 'function') {
+            try { window.gtag('event', 'generate_lead', { method: 'website_form' }); }
+            catch (_) { /* An analytics error is not a submission error. */ }
+          }
+        } catch (error) {
+          show('error', 'We couldn’t confirm your enquiry. Your details are still here. If in doubt, call or WhatsApp us on 07833 823384.');
+        } finally {
+          busy = false;
+          button.disabled = false;
+        }
+      });
+    }());
   </script>
 </body>
 </html>
