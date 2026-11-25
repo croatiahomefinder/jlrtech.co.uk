@@ -118,7 +118,7 @@
           {"@type":"Question","name":"What does an Ingenium timing chain replacement cost?","acceptedAnswer":{"@type":"Answer","text":"Jaguar XE, XF, F-Pace and E-Pace are £1,799. Range Rover Evoque, Discovery Sport, Discovery and Velar are £1,999. Both are full kit replacements at a fixed price agreed before booking."}},
           {"@type":"Question","name":"How long does the repair take?","acceptedAnswer":{"@type":"Answer","text":"Typically 3 to 5 working days. That allows proper strip-down, cleaning, sealing and cure time, reassembly, diagnostic verification and road testing before handover."}},
           {"@type":"Question","name":"What is the Evidence Pack guarantee?","acceptedAnswer":{"@type":"Answer","text":"Every job leaves with pre- and post-repair factory diagnostic phase readings, a complete photo record of the strip-down and rebuild, and every critical fastener torque-verified and witness-marked in yellow. If a job leaves without the complete pack, the complete repair is free — parts and labour."}},
-          {"@type":"Question","name":"I replaced the camshaft position sensor and the fault came back. Why?","acceptedAnswer":{"@type":"Answer","text":"That is the classic Ingenium story. P0341 and correlation codes are usually the chain stretching, not the sensor failing — the sensor is only reporting what the stretched chain is doing. A stretch test with factory diagnostics confirms it before any parts are bought."}},
+          {"@type":"Question","name":"I replaced the camshaft position sensor and the fault came back. Why?","acceptedAnswer":{"@type":"Answer","text":"A recurring code such as P0341 is a reason to investigate, not proof of a stretched chain. We assess timing readings and symptoms before recommending replacement."}},
           {"@type":"Question","name":"Can a bad timing chain ruin the engine?","acceptedAnswer":{"@type":"Answer","text":"Yes. If a stretched chain jumps teeth, valve timing is lost and pistons can contact valves — on the Ingenium that usually means a written-off engine rather than a repair. Acting on early symptoms like cold-start rattle and correlation codes keeps it a chain job instead of an engine job."}},
           {"@type":"Question","name":"Is there a warranty?","acceptedAnswer":{"@type":"Answer","text":"Yes. The workmanship is covered for 1 year or 10,000 miles, whichever comes first. The warranty applies to the original purchaser of the service and is not transferable if the vehicle is sold."}},
           {"@type":"Question","name":"Do customers really travel from across the UK?","acceptedAnswer":{"@type":"Answer","text":"Yes — recent customers have come from Dover, Newcastle upon Tyne, Manchester, Somerset, London and Stratford-upon-Avon. Long-distance bookings are scheduled so the trip is worth it: a confirmed slot, and the car ready when promised."}}
@@ -417,6 +417,9 @@
     .step h3{margin-bottom:6px}
     .step p{margin:0;color:var(--dim)}
 
+    .quote-proof-grid{display:grid;gap:14px;margin-bottom:18px}
+    .quote-proof-grid p{margin:8px 0 0}
+    @media(min-width:820px){.quote-proof-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
     /* ---------- warranty ---------- */
     .warranty-grid{display:grid;gap:18px}
     .seal{
@@ -607,9 +610,8 @@
               repair you can see, from a garage that puts its standard in writing.
             </p>
             <p class="value-line">Jaguar and Land Rover specialists in Halesowen. See what we check before the repair and what we document afterwards.</p>
-            <div class="compare" aria-label="Price comparison">
-              <div class="cmp cmp-them"><span>Advertised elsewhere in the UK</span><strong>£2,500 – £4,500+</strong></div>
-              <div class="cmp cmp-us"><span>Our fixed price, in writing</span><strong>£1,799 Jaguar · £1,999 Land Rover</strong></div>
+            <div class="compare" aria-label="Standard timing chain prices">
+              <div class="cmp cmp-us"><span>Standard timing-chain kit replacement</span><strong>£1,799 Jaguar · £1,999 Land Rover</strong></div>
             </div>
 
             <div class="hero-actions">
@@ -693,12 +695,9 @@
           <div class="panel">
             <h3>Already replaced the cam sensor?</h3>
             <div class="callout">
-              <p><strong>And the fault came back.</strong> That's the classic Ingenium story.
-              <code class="dtc">P0341</code> and correlation codes are usually the chain stretching,
-              not the sensor failing — the sensor is only reporting what the stretched chain is
-              doing underneath it.</p>
-              <p style="margin-bottom:0;">Before you buy another part, a stretch test on factory
-              diagnostics settles it in minutes. Send us your codes and we'll tell you straight.</p>
+              <p><strong>If the fault came back, check the cause before buying another part.</strong>
+              A code such as <code class="dtc">P0341</code> can point towards a timing issue, but it does not prove the chain has stretched.</p>
+              <p style="margin-bottom:0;">Send us the codes and when the symptom occurs. We check the timing readings alongside the symptoms before recommending replacement.</p>
             </div>
           </div>
         </div>
@@ -711,9 +710,7 @@
         <div class="section-head">
           <span class="tag">Fixed pricing</span>
           <h2>Timing chain replacement cost — fixed, in writing.</h2>
-          <p>Full kit replacement, agreed up front. No quote maze, no surprises on collection.
-          For context: this exact repair is publicly advertised elsewhere in the UK from £2,500
-          to £4,500 and beyond.</p>
+          <p>For eligible 2.0 Ingenium diesels, these prices cover the standard full timing-chain kit replacement. We confirm the scope and price before you book. If the chain has already failed or there is other engine damage, the car may need a different repair.</p>
         </div>
 
         <div class="pricing-grid">
@@ -819,6 +816,22 @@
     </section>
 
     <!-- ================= WARRANTY ================= -->
+    <section class="section" id="compare-quotes" aria-labelledby="compare-quotes-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="tag">The Kovac Standard</span>
+          <h2 id="compare-quotes-title">Comparing timing-chain quotes? Ask what you’ll get back.</h2>
+          <p>Two quotes can list the same job and cover different work. Compare what is being replaced, what has been checked, and what you’ll be able to see afterwards.</p>
+        </div>
+        <div class="quote-proof-grid">
+          <article class="panel"><h3>Before: why replace it?</h3><p>Ask how the diagnosis was reached. We review the symptoms and check the timing readings before recommending the repair.</p></article>
+          <article class="panel"><h3>During: what was done?</h3><p>Ask what the quote includes and how extra findings will be handled. We agree the scope and document the work with progress photos.</p></article>
+          <article class="panel"><h3>After: how was it checked?</h3><p>Ask what you’ll see at handover. Our Evidence Pack includes post-repair diagnostic readings and visible yellow marks on critical fasteners after torque checks.</p></article>
+        </div>
+        <div class="hero-actions"><a class="btn btn-mark" href="#booking-form">Tell us what your car is doing</a><a class="btn btn-line" href="#standard">See the full repair process</a></div>
+      </div>
+    </section>
+
     <section class="section" id="warranty">
       <div class="container">
         <div class="section-head">
@@ -913,7 +926,7 @@
           </details>
           <details class="faq">
             <summary>I've already replaced the camshaft position sensor and the fault returned. Is this me?</summary>
-            <div class="faq-a"><p>Almost certainly. P0341 and correlation codes on these engines are usually the chain stretching, not the sensor — the sensor just reports what the chain is doing. A stretch test on factory diagnostics confirms it before you spend anything else.</p></div>
+            <div class="faq-a"><p>Not necessarily. A recurring code such as P0341 is a reason to investigate, not proof of a stretched chain. We assess the timing readings and symptoms before recommending replacement.</p></div>
           </details>
           <details class="faq">
             <summary>Can a stretched chain actually ruin the engine?</summary>
